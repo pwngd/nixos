@@ -48,6 +48,12 @@
     pkgs.btop
     pkgs.lutris
     pkgs.obs-studio
+    pkgs.spotify
+    pkgs.sweet
+    pkgs.sweet-folders
+    pkgs.lightly-qt
+    pkgs.catppuccin-kde
+    pkgs.catppuccin-papirus-folders
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -127,6 +127,7 @@
   	corectrl
   	nerd-fonts.jetbrains-mono
   	home-manager
+  	steam
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
