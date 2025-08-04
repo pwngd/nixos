@@ -130,8 +130,12 @@
   	nerd-fonts.jetbrains-mono
   	home-manager
   	steam
-  	starship
   ];
+
+  #xdg.portal.enable = true;
+  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

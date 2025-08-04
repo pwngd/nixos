@@ -1,19 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+  	./hyprland.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   nixpkgs.config.allowUnfree = true;
   home.username = "jburg54";
   home.homeDirectory = "/home/jburg54";
   
-  #wayland.windowManager.hyprland = {
-#	enable = true;
-#	settings = {
-#		
-#	};
-#  };
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
