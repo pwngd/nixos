@@ -113,6 +113,7 @@
   		cfgnix = "sudo micro /etc/nixos/configuration.nix";
   		cfgfp = "sudo micro /etc/nixos/flatpak.nix";
   		cfgflake = "sudo micro /etc/nixos/flake.nix";
+  		eza = "eza -l --header --git -T --hyperlink --icons";
   	};
 
   	bashrcExtra = ''
@@ -126,6 +127,7 @@
   #};
 
   programs.powerline-go.enable = true;
+  programs.eza.enable = true;
   
   #programs.zsh = {
   #	enable = true;
