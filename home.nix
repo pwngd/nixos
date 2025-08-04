@@ -47,6 +47,7 @@
     pkgs.discord
     pkgs.btop
     pkgs.lutris
+    pkgs.obs-studio
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -90,6 +91,9 @@
 
   programs.kitty = {
   	enable = true;
+  	#settings = {
+  	#	background_opacity = 0.5;
+  	#};
   };
 
   programs.firefox.enable = true;
