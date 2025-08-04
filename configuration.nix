@@ -50,6 +50,8 @@
 #  	driSupport32Bit = true;
   };
 
+  hardware.graphics.enable32Bit = true;
+
   hardware.sensor.iio.enable = true;
 
   # Enable the X11 windowing system.
@@ -144,6 +146,10 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  networking.firewall = {
+  	enable = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
