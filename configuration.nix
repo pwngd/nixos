@@ -130,6 +130,7 @@
   	nerd-fonts.jetbrains-mono
   	home-manager
   	steam
+  	starship
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
