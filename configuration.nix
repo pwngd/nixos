@@ -50,6 +50,8 @@
 #  	driSupport32Bit = true;
   };
 
+  hardware.sensor.iio.enable = true;
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -95,7 +97,7 @@
     isNormalUser = true;
     description = "John Burg";
     extraGroups = [ "networkmanager" "wheel" ];
-    #shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
 
   home-manager = {
@@ -114,14 +116,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  wget
-  git
-  curl
-  wget
-  woeusb-ng
-  ntfs3g
-  micro
+  	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  	wget
+  	git
+  	curl
+  	wget
+  	woeusb-ng
+  	ntfs3g
+  	micro
+  	corectrl
+  	nerd-fonts.jetbrains-mono
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

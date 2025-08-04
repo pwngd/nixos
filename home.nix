@@ -88,6 +88,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.kitty = {
+  	enable = true;
+  };
+
   programs.firefox.enable = true;
 
   programs.bash = {
@@ -99,6 +103,11 @@
   		cfgfp = "sudo micro /etc/nixos/flatpak.nix";
   		cfgflake = "sudo micro /etc/nixos/flake.nix";
   	};
+
+  	bashrcExtra = ''
+  	      # Custom colorful prompt
+  	      export PS1='\[\033[1;36m\]\u\[\033[0m\]@\[\033[1;36m\]\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]\$ '
+  	    '';
   };
   
   #programs.zsh = {

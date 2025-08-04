@@ -31,6 +31,13 @@ in {
         ${pkgs.flatpak}/bin/flatpak install -y flathub $app
       done
 
+      # 6. Apply Discord IPC override for Sober
+            echo "Applying Discord IPC override for org.vinegarhq.Sober..."
+            ${pkgs.flatpak}/bin/flatpak override --user \
+              --filesystem=xdg-run/app/com.discordapp.Discord:create \
+              --filesystem=xdg-run/discord-ipc-0 \
+              org.vinegarhq.Sober
+
       # 6. Remove unused Flatpaks
       ${pkgs.flatpak}/bin/flatpak uninstall --unused -y
 
