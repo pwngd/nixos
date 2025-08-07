@@ -154,6 +154,7 @@
   	nerd-fonts.jetbrains-mono
   	home-manager
   	steam
+  	ollama-rocm
   	#xdg-utils
   	#xdg-desktop-portal
   	#xdg-desktop-portal-gtk
