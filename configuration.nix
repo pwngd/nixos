@@ -154,15 +154,19 @@
   	nerd-fonts.jetbrains-mono
   	home-manager
   	steam
-  	ollama
+  	open-webui
+  	duf
   	#xdg-utils
   	#xdg-desktop-portal
   	#xdg-desktop-portal-gtk
   ];
 
   nixpkgs.config.rocmSupport = true;
+  hardware.amdgpu.opencl.enable = true;
+  hardware.amdgpu.amdvlk.enable = true;
+  hardware.graphics.enable = true;
 
-  programs.ollama = {
+  services.ollama = {
   	enable = true;
   	acceleration = "rocm";
   	#rocmOverrideGfx = "10.3.0";
