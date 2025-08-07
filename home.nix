@@ -95,10 +95,10 @@
 
   programs.kitty = {
   	enable = true;
-  	settings = {
-  		background_opacity = 0.3;
-  		background_blur = 1;
-  	};
+	#settings = {
+  	#	background_opacity = 0.3;
+  	#	background_blur = 1;
+  	#};
   };
 
   programs.firefox.enable = true;
@@ -114,10 +114,10 @@
   		eza = "eza -l --header --git -T --hyperlink --icons";
   	};
 
-  	bashrcExtra = ''
-  	      # Custom colorful prompt
-  	      export PS1='\[\033[1;36m\]\u\[\033[0m\]@\[\033[1;36m\]\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]\$ '
-  	    '';
+  	#bashrcExtra = ''
+  	#      # Custom colorful prompt
+  	#      export PS1='\[\033[1;36m\]\u\[\033[0m\]@\[\033[1;36m\]\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]\$ '
+  	#    '';
   };
 
   #programs.starship = {

@@ -15,7 +15,7 @@
 	    "$terminal" = "kitty";
 	    "$fileManager" = "dolphin";
 	    "$menu" = "rofi-wayland -show drun";
-	    "$wallpaper" = "swww init & swww img ~/Pictures/jtAvt6O.png";
+	    "$wallpaper" = "swww init & swww img /etc/nixos/wp.jpg";
 	    "$bar" = "waybar";
 	
 	    # This is an example Hyprland config file for Nix.
@@ -113,8 +113,8 @@
 	
 	      border_size = 0;
 	
-	      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-	      "col.inactive_border" = "rgba(595959aa)";
+	      #"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+	      #"col.inactive_border" = "rgba(595959aa)";
 		  #"col.active_border" = "rgba(${base0E}ff) rgba(${base09}ff) 60deg";
 		  #"col.inactive_border" = "rgba(${base00}ff)";
 	
@@ -140,7 +140,7 @@
 	        enabled = false;
 	        range = 4;
 	        render_power = 3;
-	        color = "rgba(1a1a1aee)";
+	        #color = "rgba(1a1a1aee)";
 	      };
 	
 	      # https://wiki.hypr.land/Configuring/Variables/#blur
@@ -216,7 +216,7 @@
 	    # https://wiki.hypr.land/Configuring/Variables/#misc
 	    misc = {
 	      force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
-	      disable_hyprland_logo = false; # If true disables the random hyprland logo / anime girl background. :(
+	      disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
 	    };
 	
 	
