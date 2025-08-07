@@ -12,7 +12,7 @@
       ./flatpak.nix
     ];
 
-  home-manager.backupFileExtension = "backup";
+  home-manager.backupFileExtension = "backup-$(date +%Y%m%d%H%M%S)";
 
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
@@ -20,7 +20,7 @@
 
   stylix.fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
