@@ -14,9 +14,10 @@
 	wayland.windowManager.hyprland.settings = {
 	    "$terminal" = "kitty";
 	    "$fileManager" = "dolphin";
-	    "$menu" = "rofi-wayland -show drun";
+	    "$menu" = "rofi -show drun";
 	    "$wallpaper" = "swww init & swww img /etc/nixos/wp.jpg";
 	    "$bar" = "waybar";
+	    "$browser" = "firefox";
 	
 	    # This is an example Hyprland config file for Nix.
 	    # Refer to the wiki for more information.
@@ -39,8 +40,12 @@
 	    ################
 	
 	    # See https://wiki.hypr.land/Configuring/Monitors/
-	    monitor = ",preferred,auto,auto";
-	
+	    #monitor = ",preferred,auto,auto";
+	    monitor = [
+	    	"DP-3,2560x1440@240,1920x0,1"
+	    	"HDMI-A-1,1920x1080@75,0x0,1"
+	    	",preferred,auto,1"
+	    ];
 	
 	    ###################
 	    ### MY PROGRAMS ###
@@ -111,7 +116,7 @@
 	      gaps_in = 0;
 	      gaps_out = 0;
 	
-	      border_size = 0;
+	      border_size = 2;
 	
 	      #"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 	      #"col.inactive_border" = "rgba(595959aa)";
@@ -263,9 +268,10 @@
 	
 	    bind = [
 		  "$mainMod, Tab, exec, $browser"
+		  "$mainMod, Q, killactive,"
 	    
 	      # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-	      "$mainMod, Enter, exec, $terminal"
+	      "$mainMod, L, exec, $terminal"
 	      "$mainMod, C, killactive,"
 	      "$mainMod, M, exit,"
 	      "$mainMod, E, exec, $fileManager"
