@@ -54,6 +54,23 @@
     pkgs.vinegar
   ];
 
+  let
+    waybarConfig = builtins.fetchGit {
+      url = "https://github.com/Prateek7071/dotfiles";
+      rev = "main"; # or specific commit hash for reproducibility
+    };
+  in
+  {
+    programs.waybar = {
+      enable = true;
+    };
+  
+    # Link the waybar config files
+    xdg.configFile."waybar/config".source = "${waybarConfig}/waybar/config";
+    xdg.configFile."waybar/style.css".source = "${waybarConfig}/waybar/style.css";
+    # Add any other waybar files they have
+  }
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

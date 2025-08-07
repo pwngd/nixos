@@ -9,6 +9,12 @@
 		grim
 	];
 
+	programs.waybar = {
+	    enable = true;
+	  };
+
+    xdg.configFile."waybar".source = ./waybar;	
+	
 	wayland.windowManager.hyprland.enable = true;
 
 	wayland.windowManager.hyprland.settings = {
@@ -42,7 +48,7 @@
 	    # See https://wiki.hypr.land/Configuring/Monitors/
 	    #monitor = ",preferred,auto,auto";
 	    monitor = [
-	    	"DP-3,2560x1440@240,1920x0,1"
+	    	"DP-3,2560x1440@240,1920x0,1.5"
 	    	"HDMI-A-1,1920x1080@75,0x0,1"
 	    	",preferred,auto,1"
 	    ];
