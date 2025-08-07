@@ -154,11 +154,20 @@
   	nerd-fonts.jetbrains-mono
   	home-manager
   	steam
-  	ollama-rocm
+  	ollama
   	#xdg-utils
   	#xdg-desktop-portal
   	#xdg-desktop-portal-gtk
   ];
+
+  nixpkgs.config.rocmSupport = true;
+
+  programs.ollama = {
+  	enable = true;
+  	acceleration = "rocm";
+  	#rocmOverrideGfx = "10.3.0";
+  	loadModels = [ "gpt-oss:20b" ];
+  };
 
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
