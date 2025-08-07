@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
@@ -83,13 +83,10 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.theme = "wimst";
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession = "plasma";
-
-  environment.etc."sddm/themes/wimst" = {
-    source = ./wimst;  # Path to your local theme folder
-  };
+  services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.sddm.theme = lib.cleanSource ./wimst;
+  #services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "hyprland";
 
   # Configure keymap in X11
   services.xserver.xkb = {
