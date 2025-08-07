@@ -6,12 +6,17 @@
 		waybar
 		rofi-wayland
 		swww
-		moka
+		grim
 	];
 
 	wayland.windowManager.hyprland.enable = true;
 
 	wayland.windowManager.hyprland.settings = {
+	    "$terminal" = "kitty";
+	    "$fileManager" = "dolphin";
+	    "$menu" = "rofi-wayland -show drun";
+	    "$wallpaper" = "swww init & swww img ~/Pictures/jtAvt6O.png";
+	    "$bar" = "waybar";
 	
 	    # This is an example Hyprland config file for Nix.
 	    # Refer to the wiki for more information.
@@ -45,12 +50,7 @@
 	
 	    # Set programs that you use
 	
-	    "$terminal" = "kitty";
-	    "$fileManager" = "dolphin";
-	    "$menu" = "rofi-wayland";
-		"$bar" = "waybar";
-		"$wallpaper" = "swww";
-		"$browser" = "firefox";	
+	
 	
 	    #################
 	    ### AUTOSTART ###
@@ -61,10 +61,12 @@
 	
 	    "exec-once" = [
 	       "$terminal"
-	       "$menu"
+	       "nm-applet --indicator"
 	       "$bar"
+	       "$browser"
+	       "$menu"
 	       "$wallpaper"
-	     ];
+	    ];
 	
 	
 	    #############################
@@ -87,15 +89,15 @@
 	    # Please note permission changes here require a Hyprland restart and are not applied on-the-fly
 	    # for security reasons
 	
-	    # ecosystem = {
-	    #   enforce_permissions = 1;
-	    # };
+	     ecosystem = {
+	       enforce_permissions = 1;
+	     };
 	
-	    # permission = [
-	    #   "/usr/(bin|local/bin)/grim, screencopy, allow"
-	    #   "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland, screencopy, allow"
-	    #   "/usr/(bin|local/bin)/hyprpm, plugin, allow"
-	    # ];
+	    permission = [
+	       "/usr/(bin|local/bin)/grim, screencopy, allow"
+	       "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland, screencopy, allow"
+	       "/usr/(bin|local/bin)/hyprpm, plugin, allow"
+	     ];
 	
 	
 	    #####################
@@ -106,13 +108,15 @@
 	
 	    # https://wiki.hypr.land/Configuring/Variables/#general
 	    general = {
-	      gaps_in = 5;
-	      gaps_out = 20;
+	      gaps_in = 0;
+	      gaps_out = 0;
 	
-	      border_size = 2;
+	      border_size = 0;
 	
 	      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 	      "col.inactive_border" = "rgba(595959aa)";
+		  #"col.active_border" = "rgba(${base0E}ff) rgba(${base09}ff) 60deg";
+		  #"col.inactive_border" = "rgba(${base00}ff)";
 	
 	      # Set to true enable resizing windows by clicking and dragging on borders and gaps
 	      resize_on_border = false;
@@ -125,15 +129,15 @@
 	
 	    # https://wiki.hypr.land/Configuring/Variables/#decoration
 	    decoration = {
-	      rounding = 10;
-	      rounding_power = 2;
+	      rounding = 0;
+	      rounding_power = 0;
 	
 	      # Change transparency of focused and unfocused windows
 	      active_opacity = 1.0;
 	      inactive_opacity = 1.0;
 	
 	      shadow = {
-	        enabled = true;
+	        enabled = false;
 	        range = 4;
 	        render_power = 3;
 	        color = "rgba(1a1a1aee)";
@@ -258,8 +262,10 @@
 	    "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
 	
 	    bind = [
+		  "$mainMod, Tab, exec, $browser"
+	    
 	      # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-	      "$mainMod, Q, exec, $terminal"
+	      "$mainMod, Enter, exec, $terminal"
 	      "$mainMod, C, killactive,"
 	      "$mainMod, M, exit,"
 	      "$mainMod, E, exec, $fileManager"

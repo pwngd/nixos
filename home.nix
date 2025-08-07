@@ -51,6 +51,7 @@
     pkgs.lightly-qt
     pkgs.catppuccin-kde
     pkgs.catppuccin-papirus-folders
+    pkgs.vinegar
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

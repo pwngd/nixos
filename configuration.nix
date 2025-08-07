@@ -12,6 +12,10 @@
       ./flatpak.nix
     ];
 
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  stylix.image = ./wp.jpg;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -130,6 +134,9 @@
   	nerd-fonts.jetbrains-mono
   	home-manager
   	steam
+  	#xdg-utils
+  	#xdg-desktop-portal
+  	#xdg-desktop-portal-gtk
   ];
 
   #xdg.portal.enable = true;

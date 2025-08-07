@@ -6,8 +6,19 @@ let
   desiredFlatpaks = [
     #"org.onlyoffice.desktopeditors"
     "org.vinegarhq.Sober"
+    #"org.vinegarhq.Vinegar"
   ];
 in {
+#	xdg.portal = {
+#	    enable = true;
+#	    extraPortals = with pkgs; [
+#	      xdg-desktop-portal-gtk
+#	      xdg-desktop-portal-kde
+#	    ];
+#	    config.common.default = "*";
+#	  };
+
+
   system.userActivationScripts.flatpakManagement = {
     text = ''
       # 2. Ensure the Flathub repo is added
