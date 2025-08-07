@@ -7,6 +7,7 @@
 		rofi-wayland
 		swww
 		grim
+		networkmanagerapplet
 	];
 
 	programs.waybar = {
@@ -48,9 +49,9 @@
 	    # See https://wiki.hypr.land/Configuring/Monitors/
 	    #monitor = ",preferred,auto,auto";
 	    monitor = [
-	    	"DP-3,2560x1440@240,1920x0,1.5"
+	    	"DP-3,2560x1440@240,1920x0,1.6"
 	    	"HDMI-A-1,1920x1080@75,0x0,1"
-	    	",preferred,auto,1"
+	    	#",preferred,auto,1"
 	    ];
 	
 	    ###################

@@ -83,8 +83,13 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "wimst";
   services.desktopManager.plasma6.enable = true;
   services.displayManager.defaultSession = "plasma";
+
+  environment.etc."sddm/themes/wimst" = {
+    source = ./wimst;  # Path to your local theme folder
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
